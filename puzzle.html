@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Puzzle Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Multimedia Puzzle Game</h1>
+            <p>Upload an image and solve the puzzle!</p>
+        </header>
+
+        <!-- Controls Section -->
+        <div class="controls">
+            <div class="input-group">
+                <label for="imageUpload">Choose an Image:</label>
+                <input type="file" id="imageUpload" accept="image/*">
+            </div>
+
+            <div class="grid-options">
+                <label for="gridSize">Puzzle Size:</label>
+                <select id="gridSize">
+                    <option value="3">3x3 (Easy)</option>
+                    <option value="4" selected>4x4 (Medium)</option>
+                </select>
+            </div>
+
+            <button id="startBtn" class="btn btn-primary" disabled>Start Puzzle</button>
+            <button id="resetBtn" class="btn btn-secondary" style="display: none;">Reset</button>
+        </div>
+
+        <!-- Main Game Area -->
+        <div class="game-area">
+            <!-- Original Image Preview -->
+            <div class="preview-section">
+                <h3>Original Image</h3>
+                <img id="imagePreview" src="" alt="Preview" style="display: none;">
+                <p id="previewPlaceholder" class="placeholder">Image will appear here</p>
+            </div>
+
+            <!-- Puzzle Canvas Area -->
+            <div class="puzzle-section">
+                <h3>Puzzle Area</h3>
+                <div id="puzzleContainer" class="puzzle-container">
+                    <p class="placeholder">Upload an image to start</p>
+                </div>
+            </div>
+
+            <!-- Pieces Holder -->
+            <div class="pieces-section">
+                <h3>Puzzle Pieces</h3>
+                <div id="piecesHolder" class="pieces-holder">
+                    <p class="placeholder">Pieces will appear here</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Completion Message -->
+        <div id="completionMessage" class="completion-message" style="display: none;">
+            <div class="completion-content">
+                <h2>🎉 Puzzle Completed! 🎉</h2>
+                <p>Congratulations! You solved the puzzle!</p>
+                <button id="playAgainBtn" class="btn btn-primary">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
